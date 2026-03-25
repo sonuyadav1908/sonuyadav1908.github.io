@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonu Yadav | Experimental Plasma Physicist</title>
+  <meta name="description" content="Research website of Sonu Yadav, experimental plasma physicist working on magnetic reconnection, plasma diagnostics, wave-particle interactions, and plasma processing." />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #18212b;
+      --muted: #5c6977;
+      --primary: #0d3b66;
+      --secondary: #1d6fa5;
+      --border: #d9e2ec;
+      --shadow: 0 10px 30px rgba(13, 59, 102, 0.08);
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d3b66 0%, #16527f 55%, #1d6fa5 100%);
+      color: white;
+      padding: 24px 0 72px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 42px;
+    }
+
+    .hero-card,
+    .info-card,
+    .pub-item,
+    .project-item,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-text {
+      color: white;
+      padding-right: 16px;
+    }
+
+    .hero-text h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+    }
+
+    .hero-text p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 26px;
+    }
+
+    .badge {
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .hero-card {
+      padding: 24px;
+      color: var(--text);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #dfeaf5, #c5d9eb);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 700;
+      text-align: center;
+      padding: 20px;
+      border: 1px dashed #9db8d1;
+    }
+
+    main {
+      margin-top: -40px;
+      padding-bottom: 64px;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin: 0 0 14px;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info-card,
+    .contact-card {
+      padding: 22px;
+    }
+
+    .info-card h3,
+    .project-item h3,
+    .contact-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .info-card ul,
+    .contact-card ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .project-list,
+    .pub-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-item,
+    .pub-item {
+      padding: 22px;
+    }
+
+    .project-meta,
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .placeholder-note {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 0 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        padding-right: 0;
+      }
+
+      header {
+        padding-bottom: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Sonu Yadav</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Experimental Plasma Physicist</h1>
+          <p>
+            I work on magnetic reconnection, wave-particle interactions, advanced plasma diagnostics,
+            and plasma processing, with a focus on connecting fundamental plasma physics to space and
+            semiconductor applications.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge">Magnetic Reconnection</span>
+            <span class="badge">Plasma Diagnostics</span>
+            <span class="badge">Wave-Particle Physics</span>
+            <span class="badge">Plasma Processing</span>
+          </div>
+
+          <div class="button-row">
+            <a class="button button-primary" href="#publications">View Publications</a>
+            <a class="button button-secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="portrait">
+            Add your professional photo here<br />
+            Replace this box with an image file such as<br />
+            <strong>images/profile.jpg</strong>
+          </div>
+          <p><strong>Current Role:</strong> Research Scientist / Experimental Plasma Physicist</p>
+          <p><strong>Affiliation:</strong> West Virginia University</p>
+          <p><strong>Email:</strong> your-email@domain.edu</p>
+          <p><strong>Links:</strong> Google Scholar | ORCID | LinkedIn | CV</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p class="section-subtitle">
+        Welcome to my research website. My work focuses on laboratory plasma experiments, especially
+        magnetic reconnection, lower-hybrid-scale dynamics, electron energization, and diagnostic
+        development. I am also interested in applied plasma science for semiconductor processing,
+        plasma-material interaction, and advanced plasma source design.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">Research Areas</h2>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>Fundamental Plasma Physics</h3>
+          <ul>
+            <li>Magnetic reconnection and separatrix physics</li>
+            <li>Lower-hybrid drift waves and instabilities</li>
+            <li>Wave-particle interactions and electron energization</li>
+            <li>Electron velocity distribution function measurements</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>Diagnostics and Applications</h3>
+          <ul>
+            <li>Thomson scattering and probe-based diagnostics</li>
+            <li>RF, ICP, CCP, and helicon plasma systems</li>
+            <li>Semiconductor plasma processing and etching</li>
+            <li>Experimental system integration and instrumentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-subtitle">
+        Use this section to briefly explain your strongest research efforts. Keep each entry focused and easy to scan.
+      </p>
+      <div class="project-list">
+        <article class="project-item">
+          <h3>Wave-Driven Electron Energization in Magnetic Reconnection</h3>
+          <div class="project-meta">PHASMA experiment | Magnetic reconnection | Electron kinetics</div>
+          <p>
+            This project investigates resonant wave-particle interactions during guide-field magnetic reconnection.
+            Using time-resolved plasma measurements, I study how lower-hybrid-scale fluctuations correlate with
+            distortions in the electron velocity distribution function and contribute to kinetic energy conversion.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <h3>Advanced Plasma Diagnostics</h3>
+          <div class="project-meta">Thomson scattering | Probe arrays | Instrumentation</div>
+          <p>
+            I develop and apply advanced diagnostic tools for laboratory plasmas, including Thomson scattering,
+            probe arrays, fast data acquisition, and custom experimental analysis. These tools are used to resolve
+            transient plasma behavior with high temporal and spatial fidelity.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <h3>Plasma Processing and Etching Science</h3>
+          <div class="project-meta">ICP/RIE systems | Semiconductor processing | Low-damage etching</div>
+          <p>
+            I am also interested in plasma processing for semiconductor applications, including fluorocarbon-based
+            etching, process control, and low-damage material removal. This work connects fundamental plasma physics
+            to industrially relevant plasma-surface interactions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-subtitle">
+        Start with your best 5 to 8 papers. Later, you can add a full publication list or a link to Google Scholar.
+      </p>
+      <div class="pub-list">
+        <article class="pub-item">
+          <h3>Publication Title 1</h3>
+          <div class="pub-meta">Authors, Journal, Year</div>
+          <p>
+            Add a one-line description or significance statement here.
+            <span class="placeholder-note">Replace with your real paper title and DOI/arXiv link.</span>
+          </p>
+        </article>
+
+        <article class="pub-item">
+          <h3>Publication Title 2</h3>
+          <div class="pub-meta">Authors, Journal, Year</div>
+          <p>
+            Add a one-line description or significance statement here.
+          </p>
+        </article>
+
+        <article class="pub-item">
+          <h3>Publication Title 3</h3>
+          <div class="pub-meta">Authors, Journal, Year</div>
+          <p>
+            Add a one-line description or significance statement here.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <h3>Get in touch</h3>
+        <p>
+          I welcome opportunities for research collaboration, invited talks, experimental partnerships,
+          and discussion related to plasma physics, diagnostics, and plasma processing.
+        </p>
+        <ul>
+          <li><strong>Email:</strong> your-email@domain.edu</li>
+          <li><strong>Institution:</strong> West Virginia University</li>
+          <li><strong>Google Scholar:</strong> Add your profile link</li>
+          <li><strong>ORCID:</strong> Add your ORCID link</li>
+          <li><strong>LinkedIn:</strong> Add your LinkedIn link</li>
+          <li><strong>CV:</strong> Link to your PDF CV</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Sonu Yadav. Built with HTML and CSS for GitHub Pages.
+    </div>
+  </footer>
+</body>
+</html>
